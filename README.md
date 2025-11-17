@@ -17,6 +17,7 @@ PAYPAL_BASEURL=https://api.paypal.com
 Crea un archivo .env y coloca las credenciales de Paypal:
 https://developer.paypal.com/
 ```bash
+PAYPAL_CLIENT_ID=AGREGA_TU_LLAVE
 PAYPAL_CLIENT_SECRET=AGREGA_TU_LLAVE
 PAYPAL_BASEURL=https://api.paypal.com
 ```
