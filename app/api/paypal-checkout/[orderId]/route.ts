@@ -5,8 +5,10 @@ const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID as string;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET as string;
 const base = process.env.PAYPAL_BASEURL as string;
 
-export async function POST(req: Request, { params: { orderId } }: { params: { orderId: string } }) {
+export async function POST(req: Request, { params }: { params: Promise<{ orderId: string }> }) {
     try {
+ 
+        const { orderId } = await params;
 
         /**
          * Capture payment for the created order to complete the transaction.
@@ -40,9 +42,7 @@ export async function POST(req: Request, { params: { orderId } }: { params: { or
             }
         };
 
-
         const { jsonResponse } = await captureOrder(orderId);
-
 
         return NextResponse.json(jsonResponse);
 
