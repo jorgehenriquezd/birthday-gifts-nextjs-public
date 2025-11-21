@@ -1,5 +1,6 @@
-## Como usar
+Desarrollado por [Yorch Dev](https://yorch-dev.com)
 
+## Como usar
 1) instala las dependencias:
 ```bash
 npm i
